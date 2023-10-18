@@ -34,12 +34,11 @@ Azure Kubernetes Service using Chaos Studio
   <code>az aks get-credentials --resource-group aks-chaos-mesh-rg --name aks-chaos-mesh-aks</code>
 </pre>
 
-<pre class="no translate">
   <code>cd chaosmesh</code>
   <code>terraform init</code>
   <code>terraform plan</code>
   <code>terraform apply --auto-approve</code>
-</pre>
+
 
 
 
