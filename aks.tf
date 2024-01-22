@@ -2,7 +2,7 @@
 
 module "aks" {
   source                            = "Azure/aks/azurerm"
-  version                           = "7.3.1"
+  version                           = "7.5.0"
   resource_group_name               = azurerm_resource_group.aks.name
   kubernetes_version                = var.kubernetes_version
   orchestrator_version              = var.kubernetes_version
@@ -26,7 +26,10 @@ module "aks" {
   agents_availability_zones         = ["1", "2"]
   agents_type                       = "VirtualMachineScaleSets"
   agents_size                       = var.agents_size
-
+  api_server_authorized_ip_ranges   = ["xxx.xx.xxx.xx/xx"]
+  workload_identity_enabled         = true
+  oidc_issuer_enabled               = true
+  default_node_pool_fips_enabled    = true
 
   agents_labels = {
     "nodepool" : "defaultnodepool"
